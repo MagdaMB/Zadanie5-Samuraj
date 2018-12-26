@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    margin: 0 auto;
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title,
+.message {
+    padding: 20px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pass {
+    height: 30px;
+    border-radius: 10px;
+}
+
+.message {
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 10px;
+}
