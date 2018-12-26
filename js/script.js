@@ -1,13 +1,18 @@
 const input = document.querySelector(".pass");
-const password = "hellomoto";
-const mess = document.querySelector(".message");
+const passwords = ["hi", "wiosna", "lato"];
+const mess = ["wyjechalam na dlugo", "wroce kiedys", "tak tak"];
+const result = document.querySelector("#me");
 
 input.addEventListener('input', (event) => {
-    if (password === event.target.value) {
-        mess.textContent = "you're the best hero!!!";
-    } else {
-        mess.textContent = ""
-    }
+    result.textContent = "";
+    const text = event.target.value;
+
+    passwords.forEach((password, index) => {
+        if (text === password) {
+            result.textContent = mess[index];
+            event.target.value = ""; //czysci wpisane haslo
+        }
+    })
 });
 
 input.addEventListener('focus', () => {
