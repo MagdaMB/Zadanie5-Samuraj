@@ -3,13 +3,12 @@ const passwords = ["jeDen", "dWa"];
 const mess = ["extra", "super"];
 let result = document.querySelector(".message");
 
-const showMessage = () => {
+const showMessage = (event) => {
+    let text = event.target.value.toLowerCase();
 
     passwords.forEach((password, index) => {
-        if (input.value.toLowerCase() === password.toLowerCase()) {
+        if (text === password.toLowerCase()) {
             result.textContent = mess[index];
-        } else {
-            result.textContent = "";
         }
     })
     // let text = input.value.toLowerCase();
