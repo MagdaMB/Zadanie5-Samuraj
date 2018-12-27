@@ -5,6 +5,7 @@ let result = document.querySelector(".message");
 
 const showMessage = (event) => {
     let text = event.target.value.toLowerCase();
+    result.textContent = ""
 
     passwords.forEach((password, index) => {
         if (text === password.toLowerCase()) {
