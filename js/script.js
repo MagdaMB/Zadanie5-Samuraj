@@ -1,21 +1,25 @@
 const input = document.querySelector(".pass");
-const password = "hellomoto";
-const mess = document.querySelector(".message");
+const passwords = ["jeDen", "dWa"];
+const mess = ["extra", "super"];
+let result = document.querySelector(".message");
 
-input.addEventListener('input', (event) => {
-    if (password === event.target.value) {
-        mess.textContent = "you're the best hero!!!";
-    } else {
-        mess.textContent = ""
-    }
-});
+const showMessage = () => {
 
-input.addEventListener('focus', () => {
-    input.style.backgroundColor = "black";
-    input.style.color = "white";
-})
+    passwords.forEach((password, index) => {
+        if (input.value.toLowerCase() === password.toLowerCase()) {
+            result.textContent = mess[index];
+        } else {
+            result.textContent = "";
+        }
+    })
+    // let text = input.value.toLowerCase();
 
-input.addEventListener('blur', () => {
-    input.style.backgroundColor = "white";
-    input.style.color = "black";
-})
+    // for (let i = 0; i < passwords.length; i++) {
+    //     if (text === passwords[i]) {
+    //         console.log(mess[i]);
+    //     } else {
+    //         console.log("bad")
+    //     }
+    // }
+}
+input.addEventListener('input', showMessage);
